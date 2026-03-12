@@ -1,0 +1,78 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f0f3f8;
+  --surface: #ffffff;
+  --surface2: #f7f8fa;
+  --border: #e2e8f0;
+  --border2: #cbd5e1;
+  --accent: #1a6ef5;
+  --accent-light: #eff6ff;
+  --accent-dark: #1251c4;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --warn: #d97706;
+  --warn-light: #fffbeb;
+  --text: #0f172a;
+  --text-mid: #475569;
+  --text-dim: #94a3b8;
+  --mono: 'JetBrains Mono', 'Fira Mono', 'Courier New', monospace;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --radius: 10px;
+  --shadow: 0 4px 16px rgba(0,0,0,0.07);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.11);
+}
+
+html.dark {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #1c2128;
+  --border: #30363d;
+  --border2: #484f58;
+  --accent: #3b82f6;
+  --accent-light: rgba(59,130,246,0.12);
+  --accent-dark: #2563eb;
+  --teal: #14b8a6;
+  --teal-light: rgba(20,184,166,0.12);
+  --danger: #f87171;
+  --danger-light: rgba(248,113,113,0.12);
+  --warn: #fbbf24;
+  --warn-light: rgba(251,191,36,0.12);
+  --text: #e6edf3;
+  --text-mid: #8b949e;
+  --text-dim: #484f58;
+  --shadow: 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.5);
+}
+
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s, color 0.2s;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+button { font-family: var(--sans); cursor: pointer; }
+input, textarea, select { font-family: var(--sans); }
+textarea { resize: none; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes recordPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(220,38,38,0.3), 0 0 0 0 rgba(220,38,38,0.25); }
+  50%      { box-shadow: 0 4px 20px rgba(220,38,38,0.3), 0 0 0 14px rgba(220,38,38,0); }
+}
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
